@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 20px;
+    margin: 0;
+}
+
+.mycontainer {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mybalance {
+    background: green;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.myflex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.myincome,
+.myexpense {
+    font-weight: bold;
+}
+
+.myincome {
+    color: white;
+}
+
+.myexpense {
+    color: red;
+}
+
+.mytransactions {
+    margin-bottom: 20px;
+}
+
+.mytransaction {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 5px 0;
+}
+
+.myadd {
+    margin-top: 20px;
+}
+
+.mytoggle {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.mytoggle button {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+.myexpensebtn {
+    background: #d1ffd1;
+    color: #333;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-weight: bolder;
+}
+
+.myexpensebtn:hover {
+    background-color: black;
+    color: white;
+}
+
+.myincomebtn {
+    background: #cce5ff;
+    color: #333;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-weight: bolder;
+}
+
+.myincomebtn:hover {
+    background-color: black;
+    color: white;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.mysubmit {
+    background: green;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mygreen {
+    color: green;
+}
+
+.myred {
+    color: red;
+}
+
+#incometext,
+#expensetext {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.mytoggle button.active {
+    background-color: #333 !important;
+    color: white !important;
+    transform: scale(0.98);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
