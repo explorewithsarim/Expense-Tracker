@@ -1,145 +1,143 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    padding: 20px;
     margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
+
 
 .mycontainer {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
     max-width: 400px;
-    margin: auto;
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.mybalance {
-    background: green;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: bolder;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+
+.mybalance h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #374151;
 }
+
+#myBalance {
+    margin: 8px 0;
+    font-size: 2rem;
+    color: #10b981;
+}
+
 
 .myflex {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.myincome,
-.myexpense {
-    font-weight: bold;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #6b7280;
 }
 
 .myincome {
-    color: white;
+    color: #22c55e;
+    font-weight: 600;
 }
 
 .myexpense {
-    color: red;
+    color: #ef4444;
+    font-weight: 600;
 }
+
 
 .mytransactions {
-    margin-bottom: 20px;
+    margin-top: 16px;
+    max-height: 160px;
+    overflow-y: auto;
 }
 
-.mytransaction {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #eee;
-    padding: 5px 0;
-}
 
 .myadd {
-    margin-top: 20px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .mytoggle {
     display: flex;
-    margin-bottom: 10px;
+    gap: 10px;
 }
 
-.mytoggle button {
+.myincomebtn,
+.myexpensebtn {
     flex: 1;
     padding: 10px;
-    cursor: pointer;
+    font-weight: 600;
     border: none;
-    font-weight: bold;
-}
-
-.myexpensebtn {
-    background: #d1ffd1;
-    color: #333;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    font-weight: bolder;
-}
-
-.myexpensebtn:hover {
-    background-color: black;
-    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .myincomebtn {
-    background: #cce5ff;
-    color: #333;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    font-weight: bolder;
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.myexpensebtn {
+    background-color: #fee2e2;
+    color: #b91c1c;
 }
 
 .myincomebtn:hover {
-    background-color: black;
-    color: white;
+    background-color: #bbf7d0;
 }
 
-input {
+.myexpensebtn:hover {
+    background-color: #fecaca;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
     width: 100%;
-    padding: 8px;
-    margin: 5px 0 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px #bfdbfe;
 }
 
 .mysubmit {
-    background: green;
-    color: white;
-    padding: 10px;
-    width: 100%;
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 12px;
+    font-weight: 600;
     border: none;
-    font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-.mygreen {
-    color: green;
+.mysubmit:hover {
+    background-color: #2563eb;
 }
 
-.myred {
-    color: red;
+
+@media screen and (max-width: 480px) {
+    .mycontainer {
+        padding: 16px;
+    }
 }
 
-#incometext,
-#expensetext {
-    font-weight: bolder;
-    font-size: 16px;
-}
 
-.mytoggle button.active {
-    background-color: #333 !important;
-    color: white !important;
-    transform: scale(0.98);
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
+
