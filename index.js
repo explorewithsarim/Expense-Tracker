@@ -1,5 +1,33 @@
-let myType = 'expense';
 
+function log() {
+    const notyf = new Notyf();
+
+    let username = document.getElementById('username').value.trim();
+    let password = document.getElementById('password').value;
+
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (!emailRegex.test(username)) {
+        notyf.error("Please enter a valid email address.");
+        return false;
+    }
+
+    if (password.length < 6) {
+        notyf.error("Password must be at least 6 characters.");
+        return false;
+    }
+
+    notyf.success("Login successful!");
+
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1500);
+
+    return true;
+}
+
+let myType = 'expense';
 let myBalance = document.getElementById('myBalance');
 let myIncome = document.getElementById('myIncome');
 let myExpense = document.getElementById('myExpense');
@@ -8,9 +36,9 @@ let mySubmit = document.getElementById('mySubmit');
 let myName = document.getElementById('myName');
 let myAmount = document.getElementById('myAmount');
 let myDate = document.getElementById('myDate');
-
 let incomeBtn = document.getElementById('myincomeType');
 let expenseBtn = document.getElementById('myexpenseType');
+
 
 
 incomeBtn.addEventListener('click', () => {
