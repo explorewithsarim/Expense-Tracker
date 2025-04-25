@@ -78,15 +78,15 @@ function updateUI() {
     myTransactionList.innerHTML = '';
 
     data.slice().reverse().forEach(item => {
-        const el = document.createElement('div');
-        el.className = 'mytransaction';
-        el.innerHTML = `<div>
+        const myElement = document.createElement('div');
+        myElement.className = 'mytransaction';
+        myElement.innerHTML = `<div>
         <strong>${item.name}</strong><br><small>${item.date}</small>
       </div>
       <div class="${item.type === 'income' ? 'mygreen' : 'myred'}">
         Rs.${parseFloat(item.amount).toLocaleString()}
       </div>`;
-        myTransactionList.appendChild(el);
+        myTransactionList.appendChild(myElement);
 
         if (item.type === 'income') income += parseFloat(item.amount);
         else expense += parseFloat(item.amount);

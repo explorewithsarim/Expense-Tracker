@@ -96,6 +96,7 @@ body {
     background-color: #bbf7d0;
 }
 
+
 .myexpensebtn:hover {
     background-color: #fecaca;
 }
@@ -109,6 +110,11 @@ input[type="date"] {
     font-size: 1rem;
     width: 100%;
     box-sizing: border-box;
+}
+
+.active {
+    background-color: royalblue;
+    color: white;
 }
 
 input:focus {
