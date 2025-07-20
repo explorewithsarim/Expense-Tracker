@@ -20,8 +20,7 @@ function loginUser(e) {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
 
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-
+  const users = JSON.parse(localStorage.getItem("users")) || [];  
   const user = users.find(u => u.email === email && u.password === password);
 
   if (user) {
@@ -63,7 +62,7 @@ function handleSignup(e) {
 
   notyf.success("Account created!");
   setTimeout(() => {
-    window.location.href = "home.html";
+    window.location.href = "index.html";
   }, 1500);
 }
 
