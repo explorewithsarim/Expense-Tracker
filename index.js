@@ -1,31 +1,87 @@
 
-function log() {
-    const notyf = new Notyf();
+const notyf = new Notyf();
 
-    let username = document.getElementById('username').value.trim();
-    let password = document.getElementById('password').value;
+function togglePassword() {
+  const password = document.getElementById("password");
+  const icon = document.querySelector(".toggle-password");
+  if (password.type === "password") {
+    password.type = "text";
+    icon.textContent = "🙈";
+  } else {
+    password.type = "password";
+    icon.textContent = "👁️";
+  }
+}
 
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+function loginUser(e) {
+  e.preventDefault();
 
-    if (!emailRegex.test(username)) {
-        notyf.error("Please enter a valid email address.");
-        return false;
-    }
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
 
-    if (password.length < 6) {
-        notyf.error("Password must be at least 6 characters.");
-        return false;
-    }
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    notyf.success("Login successful!");
+  const user = users.find(u => u.email === email && u.password === password);
+
+  if (user) {
+    notyf.success(`Welcome, ${user.name || "User"}!`);
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
 
     setTimeout(() => {
-        window.location.href = "index.html";
-    }, 1500);
-
-    return true;
+      window.location.href = "home.html";
+    }, 1000);
+  } else {
+    notyf.error("Invalid email or password");
+  }
 }
+
+
+function handleSignup(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!name || !email || !password) {
+    notyf.error("Please fill all fields.");
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const alreadyExists = users.some(user => user.email === email);
+
+  if (alreadyExists) {
+    notyf.error("Email already registered.");
+    return;
+  }
+
+  users.push({ name, email, password });
+  localStorage.setItem("users", JSON.stringify(users));
+
+  notyf.success("Account created!");
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 1500);
+}
+
+function logoutUser() {
+  localStorage.removeItem("loggedInUser");
+  notyf.success("Logged out successfully!");
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
+  if (loginForm) loginForm.addEventListener("submit", loginUser);
+
+  const signupForm = document.getElementById("signup-form");
+  if (signupForm) signupForm.addEventListener("submit", handleSignup);
+});
 
 let myType = 'expense';
 let myBalance = document.getElementById('myBalance');

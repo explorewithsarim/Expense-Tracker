@@ -2,35 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finance Tracker</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
 </head>
 
 <body>
-    <div class="mycontainer">
-        <div class="mybalance">
-            <h2>Balance</h2>
-            <h1 id="myBalance">Rs.0.00</h1>
-            <div class="myflex">
-                <div>Income<br><span id="myIncome" class="myincome">+Rs.0.00</span></div>
-                <div>Expense<br><span id="myExpense" class="myexpense">-Rs.0.00</span></div>
-            </div>
-        </div>
-        <div class="mytransactions" id="myTransactionList"></div>
-        <div class="myadd">
-            <div class="mytoggle">
-                <button id="myincomeType" class="myincomebtn">Income</button>
-                <button id="myexpenseType" class="myexpensebtn">Expense</button>
-            </div>
-            <input type="text" id="myName" placeholder="Name" />
-            <input type="number" id="myAmount" placeholder="Amount" />
-            <input type="date" id="myDate" />
-            <button class="mysubmit" id="mySubmit">Submit</button>
-        </div>
+
+  <form class="login-container" id="login-form" autocomplete="on">
+    <h3>Login to Your Account</h3>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" class="input-field" placeholder="Enter your email" required
+      autocomplete="username">
+
+    <label for="password">Password</label>
+    <div class="password-wrapper">
+      <input type="password" id="password" name="password" class="input-field" placeholder="Enter your password"
+        required autocomplete="current-password">
+      <span class="toggle-password" onclick="togglePassword()">👁️</span>
     </div>
-    <script src="index.js"></script>
+
+    <button type="submit" class="login-btn " onclick="loginUser(e)">Login</button>
+
+    <button type="button" class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
+
+    <div class="form-footer">
+      Don't have an account? Click Sign Up
+    </div>
+  </form>
+  <script src="index.js"></script>
 </body>
 
 </html>
