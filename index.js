@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup-form");
   if (signupForm) signupForm.addEventListener("submit", handleSignup);
 });
-git remote set-url origin https://github.com/explorewithsarim/Expense-Tracker.git
+
 let myType = 'expense';
 let myBalance = document.getElementById('myBalance');
 let myIncome = document.getElementById('myIncome');
