@@ -181,3 +181,13 @@ mySubmit.addEventListener('click', () => {
 
 
 updateUI();
+
+let clearBtn = document.getElementById('clearTransactions');
+
+clearBtn.addEventListener('click', () => {
+    const confirmClear = confirm("Are you sure you want to clear all transactions?");
+    if (confirmClear) {
+        localStorage.removeItem('myTransactions');
+        updateUI();
+    }
+});

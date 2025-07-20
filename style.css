@@ -177,3 +177,17 @@ input:focus {
     right: 10px;
   }
 }
+.clear-btn {
+  margin-top: 10px;
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.clear-btn:hover {
+  background-color: #ff1a1a;
+}
