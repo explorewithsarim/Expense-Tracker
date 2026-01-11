@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finance Tracker</title>
-    <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  </head>
 
-
-<body>
-    <div class="mycontainer">
-        <div class="mybalance">
-            <h2>Balance</h2>
-            <h1 id="myBalance">Rs.0.00</h1>
-            <div class="myflex">
-                <div>Income<br><span id="myIncome" class="myincome">+Rs.0.00</span></div>
-                <div>Expense<br><span id="myExpense" class="myexpense">-Rs.0.00</span></div>
-            </div>
-        </div>
-        <div class="mytransactions" id="myTransactionList"></div>
-        <div class="myadd">
-            <div class="mytoggle">
-                <button id="myincomeType" class="myincomebtn">Income</button>
-                <button id="myexpenseType" class="myexpensebtn">Expense</button>
-            </div>
-            <input type="text" id="myName" placeholder="Name" />
-            <input type="number" id="myAmount" placeholder="Amount" />
-            <input type="date" id="myDate" />
-            <button class="mysubmit" id="mySubmit">Submit</button>
-                <button class="clear-btn" id="clearTransactions">Clear All</button>
-        </div>
+  <body>
+    <div class="navbar">
+      <div class="heading">
+        <p>Expense Tracker</p>
+      </div>
+      <div class="logoutbtn">
+        <button onclick="logoutUser()" class="logout-btn">Logout</button>
+      </div>
     </div>
-    <button onclick="logoutUser()" class="logout-btn">Logout</button>
-
+    <div class="mycontainer">
+      <div class="mybalance">
+        <h2>Balance</h2>
+        <h1 id="myBalance">Rs.0.00</h1>
+        <div class="myflex">
+          <div>
+            Income<br /><span id="myIncome" class="myincome">+Rs.0.00</span>
+          </div>
+          <div>
+            Expense<br /><span id="myExpense" class="myexpense">-Rs.0.00</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="myadd">
+        <div class="mytoggle">
+          <button id="myincomeType" class="myincomebtn">Income</button>
+          <button id="myexpenseType" class="myexpensebtn">Expense</button>
+        </div>
+        <input type="text" id="myName" placeholder="Name" />
+        <input type="number" id="myAmount" placeholder="Amount" />
+        <input type="date" id="myDate" />
+        <button class="mysubmit" id="mySubmit">Submit</button>
+        <button class="clear-btn" id="clearTransactions">Clear All</button>
+      </div>
+    </div>
+    <div class="mytransactions" id="myTransactionList"></div>
 
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
